@@ -11,7 +11,7 @@ Set=
 owned by @1=
 Circular Saw is empty=
 Circular Saw is working on @1=
-WARNING: mod @1 tried to add node @2 to the circular saw manually.=
+#WARNING: mod @1 tried to add node @2 to the circular saw manually.=
 
 #: nodes.lua
 
@@ -82,4 +82,4 @@ someone=
 Concrete=
 Cement=
 Brass Block=
-LBM replaced @1 at @2=
+#LBM replaced @1 at @2=

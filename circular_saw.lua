@@ -13,7 +13,7 @@ circular_saw = {}
 circular_saw.known_stairs = setmetatable({}, {
 	__newindex = function(k, v)
 		local modname = minetest.get_current_modname()
-		print(S("WARNING: mod @1 tried to add node @2 to the circular saw manually.", modname, v))
+		print(("WARNING: mod %s tried to add node %s to the circular saw manually."):format(modname, v))
 	end,
 })
 
@@ -365,8 +365,7 @@ function circular_saw.on_construct(pos)
 	local meta = minetest.get_meta(pos)
 	local fancy_inv = default.gui_bg..default.gui_bg_img..default.gui_slots
 	meta:set_string(
-		--For some reason the translation does not work with @n in this part
-		--but this does work: Input material=Material de@nentrada
+		--FIXME Not work with @n in this part bug in minetest/minetest#7450.
 		"formspec", "size[11,10]"..fancy_inv..
 		"label[0,0;" ..S("Input material").. "]" ..
 		"list[current_name;input;1.7,0;1,1;]" ..

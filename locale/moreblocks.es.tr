@@ -18,7 +18,7 @@ Set=Establecer
 owned by @1=protegido por @1
 Circular Saw is empty=La sierra circular está vacia
 Circular Saw is working on @1=Sierra circular trabajando en @1
-WARNING: mod @1 tried to add node @2 to the circular saw manually.=ADVERTENCIA: el mod @1 intentó agregar el nodo @2 a la sierra circular.
+#WARNING: mod @1 tried to add node @2 to the circular saw manually.=ADVERTENCIA: el mod @1 intentó agregar el nodo @2 a la sierra circular.
 
 #: nodes.lua
 
@@ -89,4 +89,4 @@ someone=alguien
 Concrete=Concreto
 Cement=Cemento
 Brass Block=Bloque de latón
-LBM replaced @1 at @2=LBM (Modificador de Bloque al Cargar) reemplazo @1 en @2
+#LBM replaced @1 at @2=LBM (Modificador de Bloque al Cargar) reemplazo @1 en @2

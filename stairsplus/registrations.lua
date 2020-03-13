@@ -158,6 +158,7 @@ minetest.register_lbm({
 			param2 = minetest.get_node(pos).param2
 
 		})
-		minetest.log('action', S("LBM replaced @1 at @2", node.name, minetest.pos_to_string(pos)))
+		minetest.log('action', "LBM replaced " .. node.name ..
+				" at " .. minetest.pos_to_string(pos))
 	end,
 })
