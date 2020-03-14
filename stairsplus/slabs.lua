@@ -33,10 +33,10 @@ function stairsplus:register_slab_alias_force(modname_old, subname_old, modname_
 	end
 end
 
-function stairsplus:register_slab(modname, subname, recipeitem, fields)
+function stairsplus:register_slab(modname, subname, recipeitem, fields, fulldescs)
 	local defs = table.copy(stairsplus.defs["slab"])
 	for alternate, shape in pairs(defs) do
-		stairsplus.register_single("slab", alternate, shape, modname, subname, recipeitem, fields)
+		stairsplus.register_single("slab", alternate, shape, modname, subname, recipeitem, fields, (fulldescs and fulldescs["slab"..alternate] or nil))
 	end
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}

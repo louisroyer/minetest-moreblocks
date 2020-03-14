@@ -33,10 +33,10 @@ function stairsplus:register_slope_alias_force(modname_old, subname_old, modname
 	end
 end
 
-function stairsplus:register_slope(modname, subname, recipeitem, fields)
+function stairsplus:register_slope(modname, subname, recipeitem, fields, fulldescs)
 	local defs = table.copy(stairsplus.defs["slope"])
 	for alternate, def in pairs(defs) do
-		stairsplus.register_single("slope", alternate, def, modname, subname, recipeitem, fields)
+		stairsplus.register_single("slope", alternate, def, modname, subname, recipeitem, fields, (fulldescs and fulldescs["slope"..alternate] or nil))
 	end
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}

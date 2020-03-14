@@ -1,29 +1,39 @@
 # API documentation for Stairs+
 
-* `stairsplus:register_all(modname, subname, recipeitem, fields)`
+* `stairsplus:register_all(modname, subname, recipeitem, fields, full_descs)`
 	Registers a stair, slab, panel, microblock, and any other types of
 	nodes to be added in the future.
 	This also registers the node with the circular saw.
 	Example:
 	```lua
 	stairsplus:register_all("moreblocks", "wood", "default:wood", {
-		description = "Wooden",
+		description = S("Wooden"),
 		tiles = {"default_wood.png"},
 		groups = {oddly_breakabe_by_hand=1},
 		sounds = default.node_sound_wood_defaults(),
+	},
+	{["micro"] = S(Wooden Microblock"),
+	 ["micro_1"] = S("@1 (@2/16)", S(Wooden Microblock), "1"),
+	 -- …
 	})
 	```
+
+Note related to `full_descs` parameter:
+When provided this parameter allows to give description for each node registered by the function.
+This parameter recommended but optional: if a description is not found Stairs+ tries to write a description using `fields.description`,
+but in some languages this fallback can not work well because of the concatenation.
+
 The following register only a particular type of microblock.
 You will probably never want to use them directly:
 
-* `stairsplus:register_stair(modname, subname, recipeitem, fields)`
-* `stairsplus:register_slab(modname, subname, recipeitem, fields)`
-* `stairsplus:register_panel(modname, subname, recipeitem, fields)`
-* `stairsplus:register_micro(modname, subname, recipeitem, fields)`
-* `stairsplus:register_slope(modname, subname, recipeitem, fields)`
+* `stairsplus:register_stair(modname, subname, recipeitem, fields, full_descs)`
+* `stairsplus:register_slab(modname, subname, recipeitem, fields, full_descs)`
+* `stairsplus:register_panel(modname, subname, recipeitem, fields, full_descs)`
+* `stairsplus:register_micro(modname, subname, recipeitem, fields, full_descs)`
+* `stairsplus:register_slope(modname, subname, recipeitem, fields, full_descs)`
 
 If you only want to register a subset of stairsplus nodes,
-you can use the `stairsplus:register_custom_subset(subset, modname, subname, recipeitem, fields)` function.
+you can use the `stairsplus:register_custom_subset(subset, modname, subname, recipeitem, fields, full_descs)` function.
 The subset table should have the following format:
 
 ```lua

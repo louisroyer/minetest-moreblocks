@@ -87,10 +87,10 @@ function stairsplus:register_custom_subset_alias_force(subset, modname_old, subn
 	end
 end
 
-function stairsplus:register_custom_subset(subset, modname, subname, recipeitem, fields)
+function stairsplus:register_custom_subset(subset, modname, subname, recipeitem, fields, fulldescs)
 	local subset_copy = table.copy(subset)
 	for k, v in pairs(subset_copy) do
-		stairsplus.register_single(v[1], v[2], stairsplus.defs[v[1]][v[2]], modname, subname, recipeitem, fields)
+		stairsplus.register_single(v[1], v[2], stairsplus.defs[v[1]][v[2]], modname, subname, recipeitem, fields, (fulldescs and fulldescs[v[1]..v[2]] or nil))
 	end
 
 	circular_saw.known_nodes[recipeitem] = {modname, subname}

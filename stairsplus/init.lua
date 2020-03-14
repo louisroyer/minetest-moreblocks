@@ -36,12 +36,12 @@ function stairsplus:prepare_groups(groups)
 	return result
 end
 
-function stairsplus:register_all(modname, subname, recipeitem, fields)
-	self:register_stair(modname, subname, recipeitem, fields)
-	self:register_slab(modname, subname, recipeitem, fields)
-	self:register_slope(modname, subname, recipeitem, fields)
-	self:register_panel(modname, subname, recipeitem, fields)
-	self:register_micro(modname, subname, recipeitem, fields)
+function stairsplus:register_all(modname, subname, recipeitem, fields, fulldescs)
+	self:register_stair(modname, subname, recipeitem, fields, fulldescs or nil)
+	self:register_slab(modname, subname, recipeitem, fields, fulldescs or nil)
+	self:register_slope(modname, subname, recipeitem, fields, fulldescs or nil)
+	self:register_panel(modname, subname, recipeitem, fields, fulldescs or nil)
+	self:register_micro(modname, subname, recipeitem, fields, fulldescs or nil)
 end
 
 function stairsplus:register_alias_all(modname_old, subname_old, modname_new, subname_new)
